@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors"
+  ],
+  "env": {"mocha": true},
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "complexity": ["error", {"max": 4}],
+    "handle-callback-err": "error",
+    "import/default": "off",
+    "max-statements": ["error", 30],
+    "no-console": "off",
+    "no-constant-condition": "error",
+    "no-param-reassign": ["error", {"props": false}],
+    "no-process-exit": "error",
+    "no-useless-call": "error",
+    "prefer-const": ["error"],
+    "semi": ["error", "always"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "globals": { "expect": true }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "code-submission",
+  "version": "0.0.0",
+  "description": "Dave's Coding Challenge for 8th Light",
+  "main": "game.js",
+  "engines": {
+    "node": ">=10.4.0"
+  },
+  "scripts": {
+    "test:unit": "yarn run mocha --recursive -r @babel/register ./src/test/test.imports src/test/unit -w",
+    "start": "babel-node ./src/Run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dschinkel/coding_challenges.git"
+  },
+  "author": "Dave Schinkel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dschinkel/coding_challenges/issues"
+  },
+  "homepage": "https://github.com/dschinkel/coding_challenges#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/node": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
+    "chai": "*",
+    "eslint": "^5.0.1",
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "*"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": false,
+      "node": true
+    }
+  },
+  "dependencies": {
+    "colors": "^1.3.0"
+  }
+}
