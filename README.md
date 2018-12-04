@@ -1,5 +1,3 @@
-This is the coding challenge I took that got accepted before coming an 8th Lighter.
-
 ### To Play the game:
 - `yarn` to install npm modules
 - then `yarn start` to start a new game
