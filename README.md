@@ -11,6 +11,6 @@ or
 ### To run tests:
 - `yarn test:unit`
 - if using WebStorm's test runner (like I do), all you need is to set it to the unit test directory then add this for mocha options:
-`--recursive --require @babel/register ./javascript/test/test.imports -w --timeout 10000`
+`--recursive -r @babel/register ./src/test/test.imports -w`
 
 
