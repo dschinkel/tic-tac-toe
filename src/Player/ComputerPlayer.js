@@ -13,7 +13,7 @@ function _ComputerPlayer(ai, board){
 
   async function computerMove() {
     const minMaxBoard = board.clone(),
-      nextMove = await ai.minMax(minMaxBoard, player)
+      nextMove = await ai.miniMax(minMaxBoard, player)
 
     if (nextMove) {
       const moved = player.makeMove(nextMove.emptyCellIndex, player.marker, board);

@@ -135,7 +135,7 @@ function _AI(levelOfDifficulty, players, rules){
   }
 
   return {
-    minMax: miniMax,
+    miniMax: miniMax,
     getTerminalScore,
   };
 }
