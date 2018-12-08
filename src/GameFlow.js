@@ -47,10 +47,10 @@ function _GameFlow(configurator){
   }
 
   return {
-    GameType: gameType,
-    GameDifficulty: gameDifficulty,
-    GeneratePlayers: generatePlayers,
-    WhoGoesFirst: whoGoesFirst
+    gameType,
+    gameDifficulty,
+    generatePlayers,
+    whoGoesFirst
   };
 }
 

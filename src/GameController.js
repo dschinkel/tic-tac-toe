@@ -43,11 +43,11 @@ function _GameController() {
 
   async function startGame() {
     display.showWelcome();
-    await flow.GameType();
-    await flow.GameDifficulty();
+    await flow.gameType();
+    await flow.gameDifficulty();
 
-    await flow.GeneratePlayers();
-    const firstPlayer = await flow.WhoGoesFirst(configurator.getPlayers());
+    await flow.generatePlayers();
+    const firstPlayer = await flow.whoGoesFirst(configurator.getPlayers());
 
     setWhoGoesFirst(firstPlayer);
 
