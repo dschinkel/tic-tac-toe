@@ -24,7 +24,7 @@ describe('UI', () => {
     }
   });
 
-  it('validates invalid players', () => {
+  it('prohibits invalid players', () => {
     const invalidEntries = ["", " ", null, undefined];
     for(let entry of invalidEntries ){
       expect(validator.isValidStartingPlayer(entry)).to.be.false;
