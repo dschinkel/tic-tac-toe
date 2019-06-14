@@ -24,7 +24,7 @@ describe('UI', () => {
     }
   });
 
-  it('validates selected player to newGame game', () => {
+  it('validates invalid players', () => {
     const invalidEntries = ["", " ", null, undefined];
     for(let entry of invalidEntries ){
       expect(validator.isValidStartingPlayer(entry)).to.be.false;
