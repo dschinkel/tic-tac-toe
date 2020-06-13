@@ -13,4 +13,7 @@ or
 - if using WebStorm's test runner (like I do), all you need is to set it to the unit test directory then add this for mocha options:
 `--recursive -r @babel/register ./src/test/test.imports -w`
 
+### Implementation Notes
+The modules in this game are all done via [JS Closures](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/scope-closures).
+
 
