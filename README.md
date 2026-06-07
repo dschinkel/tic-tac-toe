@@ -65,7 +65,7 @@ Could be improved
 - It is responsible for configuring the game, and for the game flow
 - Could you refactor so that each of these responsibilities are contained in their own modules?
 		
-#### The processNextMove move function is currently dispatching based on the type of the player
+#### The `processNextMove` move function is currently dispatching based on the type of the player
 
 - Can you refactor this to be more polymorphic? 
 	- Ideally, we would like to have this function do the next move for the current player using the same logic
