@@ -26,19 +26,19 @@ While my boss doesn’t have a technical background, I do, and we both understan
 	
 We would like you to improve the existing Tic Tac Toe that the previous firm worked on. There are a number of issues with the code. Below I’ve listed some of those issues, but I’m sure there are more. 
 
-  ●  The game does not gracefully handle bad user input
-  ●  In its current form, it’s supposed to be played at a difficulty level of “hard”, meaning the computer player cannot be beaten, but in reality you can beat it with the right moves. 
-  ●  The game play left a lot to be desired. The user messages are lacking in many ways, which I’m sure you can tell
+- The game does not gracefully handle bad user input
+- In its current form, it’s supposed to be played at a difficulty level of “hard”, meaning the computer player cannot be beaten, but in reality you can beat it with the right moves. 
+- The game play left a lot to be desired. The user messages are lacking in many ways, which I’m sure you can tell
   As you can tell, there are a lot of problems and from what our devs say, the code itself is a mess. This puts us in a difficult position because we have a number of features we would like to add and we’re hoping you can help. 
 		
 We hope that you’ll be able to help us get the code in a better state. 
 		
 Without that, our devs don’t even think we’ll be able to implement the new features my boss has requested. Below you’ll see a list of the features we’re hoping to add.
 		
-  ●  Allow the user to choose the level of difficulty (“easy” means the computer can easily be beaten, “medium” means it can be beaten but only with a series of intelligent moves, and “hard” means the it is unbeatable). 
-  ●  Allow the user to choose the game type (human v. human, computer v. computer, human v. computer). 
-  ●  Allow the user to choose which player goes first
-  ●  Allow the user to choose with what “symbol” the players will mark their selections on the board 
+- Allow the user to choose the level of difficulty (“easy” means the computer can easily be beaten, “medium” means it can be beaten but only with a series of intelligent moves, and “hard” means the it is unbeatable). 
+- Allow the user to choose the game type (human v. human, computer v. computer, human v. computer). 
+- Allow the user to choose which player goes first
+- Allow the user to choose with what “symbol” the players will mark their selections on the board 
 (traditionally it’s “X” and “O”)
 		
 Could you implement these features? 
