@@ -58,7 +58,7 @@ Strong
 - You broke out a number responsibilities into a number of well named modules.
 - Nice specs!
 	 
-Could be improved
+### Could be improved
 
 #### The GameController module has more than one responsibility
 
@@ -72,9 +72,9 @@ Could be improved
  	- Leveraging polymorphism here should make this function more generic and easier to test
   	- It would also make it more flexible for us to add additional player types in the future
 	
-- Many of the modules have a hard dependency on some of the UI modules, namely the UIDisplay module
+- Many of the modules have a hard dependency on some of the UI modules, namely the `UIDisplay` module
 	- This is not the most flexible design
-		- Imagine that we added a new FaxDisplay module that would allow us to play the game via a fax machine
+		- Imagine that we added a new `FaxDisplay` module that would allow us to play the game via a fax machine
 		- What modules would we have to change in order to support both the console and fax?
 		- This is the essence of the Open/Closed Principle
 			- We want to be able to extend our code without needing to modify it
