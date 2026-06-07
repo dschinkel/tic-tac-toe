@@ -42,3 +42,67 @@ Without that, our devs don’t even think we’ll be able to implement the new f
 (traditionally it’s “X” and “O”)
 		
 Could you implement these features? 
+
+
+## CodeReview
+Done by Rob Mulholand
+Rob was so gracious to take his time to give a code review on this, something 8th Lighters did when reviewing this kata as part of submitting for an interview.
+
+Hi Dave,
+
+Here are some notes about your code submission. They are organized into three categories (strong, needs improvement, and questions to consider).
+
+Strong
+- The game is unbeatable
+- I enjoyed the colorful UI, especially the message for when a player wins!
+- You broke out a number responsibilities into a number of well named modules.
+- Nice specs!
+	 
+Could be improved
+
+#### The GameController module has more than one responsibility
+
+- It is responsible for configuring the game, and for the game flow
+- Could you refactor so that each of these responsibilities are contained in their own modules?
+		
+#### The processNextMove move function is currently dispatching based on the type of the player
+
+- Can you refactor this to be more polymorphic? 
+	- Ideally, we would like to have this function do the next move for the current player using the same logic
+ 	- Leveraging polymorphism here should make this function more generic and easier to test
+  	- It would also make it more flexible for us to add additional player types in the future
+	
+- Many of the modules have a hard dependency on some of the UI modules, namely the UIDisplay module
+	- This is not the most flexible design
+		- Imagine that we added a new FaxDisplay module that would allow us to play the game via a fax machine
+		- What modules would we have to change in order to support both the console and fax?
+		- This is the essence of the Open/Closed Principle
+			- We want to be able to extend our code without needing to modify it
+		- Another side effect of this hard dependency is that we end up printing to stdout in our tests, which adds a lot of noise
+			- It would be nice if we had the ability to configure our code to use a TestDisplay or something of the like when we are unit testing
+				
+#### The Move module looks to have multiple responsibilities as well
+- It is responsible for validating the moves
+	- and also placing the move
+ 	- Adding the move to the board feels like it might be better at home in the Board module
+	
+#### The Players module is depending on the GameController module in order to determine the level of difficulty, and the GameController module is depending on the Player module for various actions
+- Circular dependencies can make our code rigid very quickly
+- The Dependency Inversion Principle states that "higher level modules should not depend on lower level modules"
+- GameController is higher level than the Players module
+	- How could we break this dependency?
+		- There a number of ways that we could approach the solution
+			- One way might be to pass the difficulty to the Player somehow
+				- Another approach might be to split the split the player into many players, a Human, EasyComputer, MediumComputer, and HardComputer, then decide which one to use inside the GameController based on the value of the difficulty setting
+				- Could you refactor so that we no longer have this circular dependency? Questions to Consider
+
+#### Please attach the answers to these questions to your next pull request.
+		
+- If you were to receive a new requirement for your Tic Tac Toe game to be able to play on a 4x4 board, what would have to change?
+	
+- Were there any parts of the codebase that were difficult to test? What would have to change in order to make it easier?
+
+Dave: 
+```
+Yes, I found it hard to test GameController because the top level functions called internal functions and to test those internal functions I'd have to export them which isn't a good thing to do…it felt very wrong having to export internals for some modules.  For example promptForGameSettings in GameController, that was hard to test because it was doing too much under the hood but it was setting up the workflow so…it had multiple prompts in the workflow and designated the order in which things happen as part of the game workflow
+```
